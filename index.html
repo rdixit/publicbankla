@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+    <head>
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">        	<base href="https://publicbankla.com/" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Public Bank of Los Angeles - The People's Bank." />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>Home</title>
+	<link href="/index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+	<link href="/index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+	<link href="/templates/theme3397/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/media/jui/css/chosen.css" rel="stylesheet" type="text/css" />
+	<link href="/templates/theme3397/css/template.css" rel="stylesheet" type="text/css" />
+	<link href="/templates/theme3397/css/font-awesome.css" rel="stylesheet" type="text/css" />
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" type="text/css" />
+	<link href="/templates/theme3397/css/komento.css" rel="stylesheet" type="text/css" />
+	<link href="/templates/theme3397/css/color_schemes/color_scheme_1.css" rel="stylesheet" type="text/css" id="color_scheme" />
+	<link href="/templates/theme3397/css/swiper.css" rel="stylesheet" type="text/css" />
+	<link href="/modules/mod_swiper/css/animate.css" rel="stylesheet" type="text/css" />
+	<link href="/templates/theme3397/html/mod_icemegamenu/css/navbar.css" rel="stylesheet" type="text/css" />
+	<script src="/media/jui/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js" type="text/javascript"></script>
+	<script src="/plugins/system/bootstrap_3/assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/media/jui/js/chosen.jquery.min.js" type="text/javascript"></script>
+	<script src="/templates/theme3397/js/scripts.js" type="text/javascript"></script>
+	<script src="/media/com_wrapper/js/iframe-height.min.js" type="text/javascript"></script>
+	<script src="/modules/mod_swiper/js/swiper.min.js" type="text/javascript"></script>
+	<script src="/modules/mod_swiper/js/jquery.vide.min.js" type="text/javascript"></script>
+	<script src="/templates/theme3397/html/mod_icemegamenu/js/menu.js" type="text/javascript" defer="defer"></script>
+	<script src="/templates/theme3397/html/mod_icemegamenu/js/jquery.rd-navbar.js" type="text/javascript" defer="defer"></script>
+	<script type="text/javascript">
+jQuery(document).ready(function($){
+	jQuery('.hasTooltip').tooltip({"html": true});
+if(window.MooTools) {
+
+			  // Mootools conflict fix for toggle with Bootstrap 3/JQuery
+			  window.addEvent('load', function() {
+			    $$('[rel=tooltip],[data-toggle],a[data-toggle],button[data-toggle],[data-toggle=collapse],a[data-toggle=dropdown],.hasTooltip').each(function (e) {
+			        e.getParent().hide = null;
+			        e.hide = null;
+			    });
+			  });
+
+			}
+});
+		jQuery(document).ready(function (){
+			jQuery('select').chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
+		});
+	var path = "templates/theme3397/js/";(function($){$(document).ready(function(){var o=$("#back-top");$(window).scroll(function(){if($(this).scrollTop()>100){o.fadeIn()}else{o.fadeOut()}});var $scrollEl=($.browser.mozilla||$.browser.msie)?$("html"):$("body");o.find("a").click(function(){$scrollEl.animate({scrollTop:0},400);return false})})})(jQuery);
+	;(function ($, undefined) {
+			$(window).load(function(){
+				function isIE() {
+				    var myNav = navigator.userAgent.toLowerCase();
+				    return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+				};
+				var o = $("#swiper-slider_208");				
+			    if (o.length) {
+			        function getSwiperHeight(object, attr) {
+			            var val = object.attr("data-" + attr), dim;
+			            if (!val) {
+			                return undefined;
+			            }
+			            dim = val.match(/(px)|(%)|(vh)$/i);
+			            if (dim.length) {
+			                switch (dim[0]) {
+			                    case"px":
+			                        return parseFloat(val);
+			                    case"vh":
+			                        return $(window).height() * (parseFloat(val) / 100);
+			                    case"%":
+			                        return object.width() * (parseFloat(val) / 100);
+			                }
+			            } else {
+			                return undefined;
+			            }
+			        }
+
+			        function toggleSwiperInnerVideos(swiper) {
+			            var videos;
+			            $.grep(swiper.slides, function (element, index) {
+			                var $slide = $(element), video;
+			                if (index === swiper.activeIndex) {
+			                    videos = $slide.find("video");
+			                    if (videos.length) {
+			                        videos.get(0).play();
+			                    }
+			                } else {
+			                    $slide.find("video").each(function () {
+			                        this.pause();
+			                    });
+			                }
+			            });
+			        }
+
+			        function toggleSwiperCaptionAnimation(swiper) {
+			            if (isIE() && isIE() < 10) {
+			                return;
+			            }
+			            var prevSlide = $(swiper.container), nextSlide = $(swiper.slides[swiper.activeIndex]);
+			            prevSlide.find("[data-caption-animate]").each(function () {
+			                var $this = $(this);
+			                $this.removeClass("animated").removeClass($this.attr("data-caption-animate")).addClass("not-animated");
+			            });
+			            nextSlide.find("[data-caption-animate]").each(function () {
+			                var $this = $(this), delay = $this.attr("data-caption-delay");
+			                setTimeout(function () {
+			                    $this.removeClass("not-animated").addClass($this.attr("data-caption-animate")).addClass("animated");
+			                }, delay ? parseInt(delay) : 0);
+			            });
+			        }
+
+			        $(document).ready(function () {
+			            o.each(function () {
+			                var s = $(this);
+			                var pag = s.find(".swiper-pagination"), next = s.find(".swiper-button-next"), prev = s.find(".swiper-button-prev"), bar = s.find(".swiper-scrollbar"), h = getSwiperHeight(o, "height"), mh = getSwiperHeight(o, "min-height");
+			                s.find(".swiper-slide").each(function () {
+			                    var $this = $(this), url;
+			                    if (url = $this.attr("data-slide-bg")) {
+			                        $this.css({"background-image": "url(" + url + ")", "background-size": "cover"})
+			                    }
+			                }).end().find("[data-caption-animate]").addClass("not-animated").end();
+
+								var slider = new Swiper(s,{
+			                    autoplay: s.attr('data-autoplay') ? s.attr('data-autoplay') === "false" ? undefined : s.attr('data-autoplay') : 5000,
+			                    direction: s.attr('data-direction') ? s.attr('data-direction') : "horizontal",
+			                    effect: s.attr('data-slide-effect') ? s.attr('data-slide-effect') : "slide",
+			                    speed: s.attr('data-slide-speed') ? s.attr('data-slide-speed') : 600,
+			                    keyboardControl: s.attr('data-keyboard') === "true",
+			                    mousewheelControl: s.attr('data-mousewheel') === "true",
+			                    mousewheelReleaseOnEdges: s.attr('data-mousewheel-release') === "true",
+			                    nextButton: next.length ? next.get(0) : null,
+			                    prevButton: prev.length ? prev.get(0) : null,
+			                    pagination: pag.length ? pag.get(0) : null,
+			                    paginationClickable: pag.length ? pag.attr("data-clickable") !== "false" : false,
+			                    paginationBulletRender: pag.length ? pag.attr("data-index-bullet") === "true" ? function (index, className) {
+			                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+			                    } : null : null,
+			                    scrollbar: bar.length ? bar.get(0) : null,
+			                    scrollbarDraggable: bar.length ? bar.attr("data-draggable") !== "false" : true,
+			                    scrollbarHide: bar.length ? bar.attr("data-draggable") === "false" : false,
+			                    loop: s.attr('data-loop') !== "false",
+			                    //loopedSlides: 1,
+			                    autoplayDisableOnInteraction: false,
+			                    onTransitionStart: function (swiper) {
+			                        toggleSwiperInnerVideos(swiper);
+			                    },
+			                    onTransitionEnd: function (swiper) {
+			                        toggleSwiperCaptionAnimation(swiper);
+			                    },
+			                    onInit: function (swiper) {
+			                        toggleSwiperInnerVideos(swiper);
+			                        toggleSwiperCaptionAnimation(swiper);
+			                        var o = $(swiper.container).find('.rd-parallax');
+			                        var p = $(swiper.container).find('.slider-parallax-swiper');
+			                        if(p.length){
+			                        	RDParallax_autoinit('.slider-parallax-swiper');
+			                        }
+			                        if (o.length && window.RDParallax) {
+			                            o.RDParallax({layerDirection: ($('html').hasClass("smoothscroll") || $('html').hasClass("smoothscroll-all")) && !isIE() ? "normal" : "inverse"});
+			                        }
+			                    },
+			                    
+onSlideChangeStart: function(swiper){
+
+  var activeSlideIndex, slidesCount;
+
+
+
+  activeSlideIndex = swiper.activeIndex;
+
+  slidesCount = swiper.slides.not(".swiper-slide-duplicate").length;
+
+
+
+  if( activeSlideIndex ===  slidesCount + 1 ){
+
+      activeSlideIndex = 1;
+
+  }else if( activeSlideIndex ===  0 ){
+
+      activeSlideIndex = slidesCount;
+
+  }
+
+  if( swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-title") ){
+
+      $(swiper.container).find('.swiper-button-next .title')[0].innerHTML = swiper.slides[activeSlideIndex +
+
+      1].getAttribute("data-slide-title");
+
+      $(swiper.container).find('.swiper-button-prev .title')[0].innerHTML = swiper.slides[activeSlideIndex -
+
+      1].getAttribute("data-slide-title");
+
+  }
+
+
+
+  if( swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-subtitle") ) {
+
+      $(swiper.container).find('.swiper-button-prev .subtitle')[0].innerHTML = swiper.slides[activeSlideIndex -
+
+      1].getAttribute("data-slide-subtitle");
+
+      $(swiper.container).find('.swiper-button-next .subtitle')[0].innerHTML = swiper.slides[activeSlideIndex +
+
+      1].getAttribute("data-slide-subtitle");
+
+  }
+
+  //Replace btn img
+
+  if( $(swiper.container).find('.preview__img')[0] !== undefined ){
+
+      $(swiper.container).find('.swiper-button-prev .preview__img').css("background-image", "url(" +
+
+        swiper.slides[activeSlideIndex - 1].getAttribute("data-slide-bg") + ")");
+
+      $(swiper.container).find('.swiper-button-next .preview__img').css("background-image", "url(" +
+
+        swiper.slides[activeSlideIndex + 1].getAttribute("data-slide-bg") + ")");
+
+  }
+
+}
+
+
+
+			                });
+			                $(window).on("resize", function () {
+			                    var mh = getSwiperHeight(s, "min-height"),
+			                    	h = getSwiperHeight(s, "height");
+			                    if (h) {
+			                        s.css("height", mh ? mh > h ? mh : h : h);
+			                    }			                }).load(function () {
+			                    s.find("video").each(function () {
+			                        if (!$(this).parents(".swiper-slide-active").length) {
+			                            this.pause();		                        }
+			                    });
+			                }).trigger("resize");
+			            });
+			        });
+			    }
+			});
+	})(jQuery);
+jQuery(function($){var e=$(window).width();$("#icemegamenu").find(".icesubMenu").each(function(a){var b=$(this).offset();var c=b.left+$(this).width();if(c>=e){$(this).addClass("ice_righttoleft")}});$(window).resize(function(){var d=$(window).width();$("#icemegamenu").find(".icesubMenu").removeClass("ice_righttoleft").each(function(a){var b=$(this).offset();var c=b.left+$(this).width();if(c>=d){$(this).addClass("ice_righttoleft")}})})});
+	</script>
+
+    </head>
+    <body class="body__home option-com_content view-category task- itemid-101">
+                <!-- Body -->
+        <div id="wrapper">
+            <div class="wrapper-inner">
+                <a id="fake" href='#'></a>
+
+                <!-- Top -->
+                <div id="top" class="stuck_position">
+                    
+            <div class="container">
+        <div class="row">
+    
+            
+
+            <div id="logo" class="col-sm-3">
+                <a href="https://publicbankla.com/">
+                                        <span class="site-logo"><span class="item_title_char0 item_title_char_odd item_title_char_first_half item_title_char_first">P</span><span class="item_title_char1 item_title_char_even item_title_char_first_half">u</span><span class="item_title_char2 item_title_char_odd item_title_char_first_half">b</span><span class="item_title_char3 item_title_char_even item_title_char_first_half">l</span><span class="item_title_char4 item_title_char_odd item_title_char_first_half">i</span><span class="item_title_char5 item_title_char_even item_title_char_first_half">c</span><span class="item_title_char6 item_title_char_odd item_title_char_first_half"> </span><span class="item_title_char7 item_title_char_even item_title_char_second_half">B</span><span class="item_title_char8 item_title_char_odd item_title_char_second_half">a</span><span class="item_title_char9 item_title_char_even item_title_char_second_half">n</span><span class="item_title_char10 item_title_char_odd item_title_char_second_half">k</span><span class="item_title_char11 item_title_char_even item_title_char_second_half"> </span><span class="item_title_char12 item_title_char_odd item_title_char_second_half">L</span><span class="item_title_char13 item_title_char_even item_title_char_second_half item_title_char_last">A</span></span>
+                                                        </a>
+            </div>
+            
+
+               
+
+            <nav class="moduletable home_menu  col-sm-6"><div class="module_container">
+<div class="icemegamenu">
+	<ul id="icemegamenu">
+		<li id="iceMenu_101" class="iceMenuLiLevel_1 current active fullwidth">
+			<a href="https://publicbankla.com/" class="icemega_active iceMenuTitle ">
+				<span class="icemega_title icemega_nosubtitle">Home</span>
+			</a>
+		</li>
+		<li id="iceMenu_134" class="iceMenuLiLevel_1 mzr-drop parent ">
+			<a class=" iceMenuTitle ">
+				<span class="icemega_title icemega_nosubtitle">About</span>
+			</a>
+			<ul class="icesubMenu icemodules sub_level_1" style="width:330px">
+				<li>
+					<div style="float:left;width:330px" class="iceCols">
+						<ul>
+							<li id="iceMenu_136" class="iceMenuLiLevel_2 ">
+								<a href="/index.php/about/team" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Team</span>
+								</a>
+							</li>
+							<li id="iceMenu_589" class="iceMenuLiLevel_2 ">
+								<a href="/index.php/about/endorsements" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Endorsements</span>
+								</a>
+							</li>
+							<li id="iceMenu_285" class="iceMenuLiLevel_2 ">
+								<a href="/index.php/about/news" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">News</span>
+								</a>
+							</li>
+							<li id="iceMenu_594" class="iceMenuLiLevel_2 ">
+								<a href="https://us02web.zoom.us/webinar/register/WN_-A0USxAkTqeeV--obI55OQ" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Public Bank LA and Democracy Collaborative Webinar</span>
+								</a>
+							</li>
+							<li id="iceMenu_598" class="iceMenuLiLevel_2 ">
+								<a href="https://www.laforward.org/events/2021/6/6/a-public-bank-community-teach-in" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Public Bank Teach-In w/ LA Forward, Sunrise LA, ACT-LA</span>
+								</a>
+							</li>
+							<li id="iceMenu_592" class="iceMenuLiLevel_2 ">
+								<a href="/index.php/about/public-bank-la-townhall" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Town Hall</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li id="iceMenu_593" class="iceMenuLiLevel_1 mzr-drop parent ">
+			<a href="https://publicbankla.com/" class=" iceMenuTitle ">
+				<span class="icemega_title icemega_nosubtitle">Resources</span>
+			</a>
+			<ul class="icesubMenu icemodules sub_level_1" style="width:280px">
+				<li>
+					<div style="float:left;width:280px" class="iceCols">
+						<ul>
+							<li id="iceMenu_602" class="iceMenuLiLevel_2 ">
+								<a href="https://medium.com/@publicbankla/los-angeles-advances-on-the-first-municipal-public-bank-in-the-united-states-f91675a4000b" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">LA Releases RFP for Nation's First Municipal Bank</span>
+								</a>
+							</li>
+							<li id="iceMenu_601" class="iceMenuLiLevel_2 ">
+								<a href="https://publicbankla.com/images/PBLA-3---Pager-2022.pdf" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">PBLA Intro PDF</span>
+								</a>
+							</li>
+							<li id="iceMenu_595" class="iceMenuLiLevel_2 ">
+								<a href="https://publicbankla.com/images/Public-Bank-LA-Resource-Booklet.pdf" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">PBLA Resource Booklet</span>
+								</a>
+							</li>
+							<li id="iceMenu_596" class="iceMenuLiLevel_2 ">
+								<a href="https://democracycollaborative.org/learn/publication/constructing-democratic-public-bank-governance-proposal-los-angeles" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Constructing the Democratic Public Bank</span>
+								</a>
+							</li>
+							<li id="iceMenu_600" class="iceMenuLiLevel_2 ">
+								<a href="https://publicbankla.com/images/Common-Misconceptions.pdf" target="_blank" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">Common Misconceptions</span>
+								</a>
+							</li>
+							<li id="iceMenu_597" class="iceMenuLiLevel_2 ">
+								<a href="https://californiapublicbankingalliance.org/wp-content/uploads/2022/01/Digital-CPBA-Resource-Booklet-2022.pdf" class=" iceMenuTitle ">
+									<span class="icemega_title icemega_nosubtitle">CPBA Resource Booklet</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li id="iceMenu_586" class="iceMenuLiLevel_1 ">
+			<a href="https://californiapublicbankingalliance.org" target="_blank" class=" iceMenuTitle ">
+				<span class="icemega_title icemega_nosubtitle">CPBA</span>
+			</a>
+		</li>
+		<li id="iceMenu_142" class="iceMenuLiLevel_1 ">
+			<a href="/index.php/contact" class=" iceMenuTitle ">
+				<span class="icemega_title icemega_nosubtitle">Contact</span>
+			</a>
+		</li>
+	</ul>
+</div></div></nav>
+            </div>
+    </div>
+    </div>
+                
+                <!-- showcase -->
+    <div id="showcase"class="stuck_position"><div class="moduletable custom-slider"><div class="module_container">
+<div id="swiper-slider_208" class="swiper-container swiper-slider custom-slider"
+	data-min-height="200px"
+	data-height="48.33984375%"
+	data-autoplay="false"
+	data-loop="true"
+	data-slide-effect="slide"
+	
+	>
+	<div class="swiper-wrapper">
+		
+<div
+class="swiper-slide "
+		data-vide-bg="/media/swiper-videos/LOS ANGELES - Video Montage (60fps)"
+        
+>
+	<div class="swiper-slide-caption"
+			data-caption-animate="fadeIn"
+		data-caption-delay="200">
+					<div class="camera_caption ">
+
+										
+					<h1 class="slide-title"><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">public</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">bank</span> <span class="item_title_part_2 item_title_part_odd item_title_part_second_half item_title_part_last">la</span></h1>
+		
+						
+						
+						
+								<p>The People's Bank</p>		
+			<!-- Read More link -->
+			
+			</div>
+			</div>
+</div>
+	</div>
+		</div>
+</div></div></div>
+<!-- maintop -->
+    <div id="maintop"class="stuck_position"><div class="container">
+        <div class="row"><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">LA</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">City</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">Council</span> <span class="item_title_part_3 item_title_part_even item_title_part_first_half">Approves</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half">LA</span> <span class="item_title_part_5 item_title_part_even item_title_part_second_half">Public</span> <span class="item_title_part_6 item_title_part_odd item_title_part_second_half">Bank</span> <span class="item_title_part_7 item_title_part_even item_title_part_second_half item_title_part_last">Motion</span></h3></header><iframe onload="iFrameHeight()"	id="blockrandom"
+	name=""
+	src="https://www.youtube.com/embed/5eEu3RMDWgU"
+	width="100%"
+	height="615"
+	scrolling="auto"
+	frameborder="0"
+	class="wrapper" >
+	No iframes</iframe>
+</div></div></div>
+        </div></div>
+                <!-- Main Content row -->
+                <div id="content">
+                                        <div class="container">
+                        <div class="row">
+                                                <div class="content-inner">
+                                <!-- Left sidebar -->
+                                                                
+                                <div id="component" class="col-sm-12">
+                                    <main role="main">
+                                        <!-- content-top -->
+    <div id="content-top"><div class="row"><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Campaign</span> <span class="item_title_part_1 item_title_part_even item_title_part_second_half item_title_part_last">Updates</span></h3></header><div class="mod-article-single mod-article-single__" id="module_234">
+	<div class="item__module" id="item_230">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p class="p1"><span class="s1">Measure B received <a href="https://www.lavote.net/electionresults/text/3861"><span class="s2">44.15% of the votes</span></a> with 430,488 Angelenos voting yes to a public bank, an astonishing achievement from a grassroots, volunteer-run campaign with minimal funding. <br /><br /></span><span class="s3">Following the Measure B campaign, we focused 100% of our efforts on building the California Public Banking Alliance (CPBA) coalition and leading the AB 857 campaign, a bill that was drafted and initiated by CPBA and introduced into the California State Legislature in February 2019. Visit <a href="http://californiapublicbankingalliance.org/" target="_blank"><strong>californiapublicbankingalliance.org</strong></a> to learn more about our 10-city strong coalition and the Public Banking Act, our California State Assembly bill to create a pathway for cities, counties and regions in California to set up their own public banks. Authored by Assemblymembers Miguel Santiago (Los Angeles) and David Chiu (San Francisco), this 2019 session bill enables the Department of Business Oversight to issue state banking charters to local government agencies.<br /></span><span class="s3"><br />On October 2, 2019 Governor Newsom signed the Public Banking Act into law, legalizing pubic banking in California for the first time in history. This was also the first progressive banking bill passed as a grassroots, citizen-mobilizing effort, without paid lobbyists. <br /><br /></span>On October 7, 2019 Los Angeles City Council President Herb Wesson introduced a motion for an RFQ to hire a consultant for the public bank business plan. The motion was presented to the full council and on December 4, 2019, LA City Council approved the motion, voting to move forward with the process to hire a consultant. Approval of this motion now green-lights the Chief Legislative Analyst (CLA)'s next steps: drafting the scope and structure of the RFQ. The CLA was also instructed to report back on the cost of the consultant.<br /><br />As of February 2020, Public Bank Los Angeles is currently working on a white paper addressing capitalization, lines of business, loans and financial products to support renewable energy infrastructure, banking services for City of LA and other participating members, impact and equity, regulatory purview and phasing, and governance and jurisdiction of the Bank of Los Angeles.</p>		</div>	
+				</div>
+  </div></div></div></div></div>
+                                        <div id="system-message-container">
+	</div>
+
+                                        <section class="page-category page-category__home">
+	</section>
+                                        <!-- content-bottom -->
+    <div id="content-bottom"><div class="row"><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Why</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">Los</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">Angeles</span> <span class="item_title_part_3 item_title_part_even item_title_part_first_half">should</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half">start</span> <span class="item_title_part_5 item_title_part_even item_title_part_second_half">a</span> <span class="item_title_part_6 item_title_part_odd item_title_part_second_half">public</span> <span class="item_title_part_7 item_title_part_even item_title_part_second_half item_title_part_last">bank</span></h3></header><div class="mod-article-single mod-article-single__" id="module_224">
+	<div class="item__module" id="item_200">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p>Last year, the City of Los Angeles paid $170 million in banking fees and $1.1 billion in interest to big banks and investors. Banks have leveraged our tax dollars to finance harmful industries including private prisons, fossil fuel extraction, and weapons manufacturing. In 2017, the City of Los Angeles divested its funds from Wells Fargo, which was fined billions of dollars for creating illegal customer accounts, has a history of discriminating against Latino and African-American home buyers, and finances industries harmful to Angelenos.<br /><br />Local community banks are too small to manage the city’s funds, but Wall Street is not the only alternative. Banking as a public utility is a proven model worldwide. Public banks keep money local and cut costs by eliminating middlemen, shareholders and high-paid executives.<br /><br />During the 2008-09 Recession, the century-old public Bank of North Dakota safeguarded taxpayers’ money and helped finance a statewide economic boom, while Wall Street banks needed billions in taxpayer bailouts. Charter Amendment B clears a path for Los Angeles to declare its independence from Wall Street.<br /><br />A public bank would safeguard and grow the city’s assets through loans to critical city projects and local businesses. The bank would be answerable not to politicians but to an independent board of governors comprised of residents. Its mission would be to serve Angelenos.<br /><br />Los Angeles must take the first steps to explore the creation of a socially, economically, and environmentally responsible city-owned bank. A public bank will ensure that L.A. tax dollars are invested in a way that measurably improves the community.</p>
+<p> </p>
+<p> </p>		</div>	
+				</div>
+  </div></div></div><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Who</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">supports</span> <span class="item_title_part_2 item_title_part_odd item_title_part_second_half">public</span> <span class="item_title_part_3 item_title_part_even item_title_part_second_half item_title_part_last">banking?</span></h3></header><div class="mod-article-single mod-article-single__" id="module_227">
+	<div class="item__module" id="item_210">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p>Public Bank Los Angeles is endorsed by Los Angeles City Council President Herb Wesson and supported by L.A. City Council. Public Bank LA is endorsed by a broad intersection of over 100 community organizations including labor, social justice, environmental, democratic clubs, and leaders including: Los Angeles County Democratic Party, United Teachers Los Angeles (UTLA), Communication Workers of America (CWA), American Postal Workers Union (APWU), Labor Council For Latin American Advancement (LCLAA), Alliance of Californians for Community Empowerment (ACCE), Democratic Socialists of America (DSA) LA, Alliance for Community Transit Los Angeles (ACT-LA), SoCal 350 Climate Action, Coalition for Humane Immigrant Rights of Los Angeles (CHIRLA), Clergy and Laity United for Economic Justice (CLUE), Mayor Eric Garcetti, Congresswoman Maxine Waters, Senator Kevin de León, Bill McKibben-Co-Founder of 350.org and Our Revolution National.  <br /><br />Socially and environmentally responsible municipal public banks are endorsed by both the Los Angeles County Democratic Party, representing 2.4 million registered Democrats, and the California Democratic Party, representing 8.7 million registered Democrats.<br /><br />View our full list of <a href="/index.php/about/endorsements" target="_blank"><strong>endorsements</strong></a>!</p>		</div>	
+				</div>
+  </div></div></div><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Does</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">public</span> <span class="item_title_part_2 item_title_part_odd item_title_part_second_half">banking</span> <span class="item_title_part_3 item_title_part_even item_title_part_second_half item_title_part_last">work?</span></h3></header><div class="mod-article-single mod-article-single__" id="module_228">
+	<div class="item__module" id="item_209">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p>YES! The Bank of North Dakota, the only existing publicly-owned bank in the U.S., is more profitable than Goldman Sachs, has a better credit rating than JPMorgan Chase, and was the only state not deep in red ink as a result of the 2008 financial crash. </p>		</div>	
+				</div>
+  </div></div></div><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Endorse</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">Public</span> <span class="item_title_part_2 item_title_part_odd item_title_part_second_half">Bank</span> <span class="item_title_part_3 item_title_part_even item_title_part_second_half item_title_part_last">LA</span></h3></header><div class="mod-article-single mod-article-single__" id="module_230">
+	<div class="item__module" id="item_212">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p>If you are part of an organization and would like to endorse our movement to create a Los Angeles public bank, please fill out our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQ7yxFZDv_ZShcgvudif6YM61A3PQtcaUpBjFN2YXwJB02Fw/viewform" target="_blank"><strong>Endorsement Form</strong></a>.</p>		</div>	
+				</div>
+  </div></div></div><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Our</span> <span class="item_title_part_1 item_title_part_even item_title_part_second_half item_title_part_last">press</span></h3></header><div class="mod-article-single mod-article-single__" id="module_236">
+	<div class="item__module" id="item_239">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p>Check out Public Bank LA's latest press <strong><a href="/index.php/about/press" target="_blank">here</a></strong>. Visit <strong><a href="https://californiapublicbankingalliance.org/news/" target="_blank">California Public Banking Alliance</a></strong><b style="font-size: 12.16px;"> </b>for additional press. </p>
+<p class="p1"><span class="s1"><b>CPBA Press Release - </b><a href="https://californiapublicbankingalliance.org/news/public-banking-proponents-see-victory-in-outcome-of-measure-b-vote/"><span class="s2">California Public Banking Alliance sees its momentum continuing</span></a></span></p>
+<p class="p1"><span class="s1"><b>The Nation - </b><a href="https://www.thenation.com/article/2018-midterm-election-issues/?fbclid=IwAR2j9PaAICZpKL2_3ca_UncmvcsJ0ikPwdtvVK-1Fu7sAFnrPzbpVOzPWDE"><span class="s2">Today Americans Determine Our Political Future</span></a><b><br /> </b></span></p>
+<p class="p1"><span class="s1"><b>ABC 7 News - </b><a href="https://abc7.com/politics/measure-b-would-allow-la-to-create-a-public-bank/4537795/?fbclid=IwAR16xr2XgrQWBnFkxvjl7Gu0BrrNEER2Buei2YAt9aBHz4PpbiryAc5yr8Q"><span class="s2">Measure B Would Allow Los Angeles to Create a Public Bank</span></a><b><br /></b></span></p>
+<p class="p1"><span class="s1"><b>The Real News Network - </b><a href="https://therealnews.com/stories/will-public-banking-free-la-from-wall-street?fbclid=IwAR1aTWAfyOdbWcBbkp2SKxNB50KZPDXmmOqok7eN5Rci_UTwaurrvxT6qoM"><span class="s2">Will Public Banking Free LA From Wall Street?<br /> </span></a></span></p>
+<p class="p1"><span class="s1"><b>Occupy.com - </b><a href="https://www.occupy.com/article/banking-future-los-angeles-why-we-need-charter-amendment-b"><span class="s2">Banking on the Future of Los Angeles: Why we need Measure / Charter Amendment B</span></a><b><br /> </b></span></p>
+<p class="p1"><span class="s1"><b>Los Angeles Times - </b><a href="http://www.latimes.com/local/lanow/la-me-ln-bank-ballot-measure-20181015-story.html"><span class="s2">L.A. Voters Will Decide Whether to Eliminate a Barrier to a Public Bank</span></a><b><br /> </b></span></p>
+<p class="p1"><span class="s1"><b>Bloomberg - </b><span class="s2"><a href="https://www.bloomberg.com/news/articles/2018-10-11/los-angeles-weighs-bringing-its-wall-street-cash-home">Los Angeles Weighs Bringing Its Wall Street Cash Home</a></span></span></p>
+<p class="p3"><span class="s1"><b>Los Angeles Times - </b><a href="http://www.latimes.com/opinion/op-ed/la-oe-meyerson-public-bank-la-20181003-story.html"><span class="s2">Why Los Angeles Should Start a Bank</span></a></span></p>
+<p class="p1"><span class="s1"><strong> Huffington Post</strong> - <a href="https://www.huffingtonpost.com/entry/public-bank-los-angeles_us_5b6bef33e4b0ae32af954495"><span class="s2">What If Banks Were Publicly Owned? In LA, This May Soon Be A Reality.</span></a><br /> </span></p>
+<p class="p1"><span class="s1"><strong>Los Angeles Times</strong> - <a href="http://www.latimes.com/business/la-fi-public-bank-charter-20180625-story.html"><span class="s2">Next step for L.A. public bank: Ask the voters for permission</span></a><br /> </span></p>		</div>	
+				</div>
+  </div></div></div><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Volunteer</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">with</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">Public</span> <span class="item_title_part_3 item_title_part_even item_title_part_second_half">Bank</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half item_title_part_last">LA</span></h3></header><div class="mod-article-single mod-article-single__" id="module_237">
+	<div class="item__module" id="item_240">
+		
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<p>Lend your skills and talents to put an end to Wall Street greed and join the historic efforts to create the Public Bank of Los Angeles and the first municipal public bank in the nation! <br /><br />Fill out our <strong><a href="https://forms.gle/HS4Qw9dJ4gke8jYP9" target="_blank">Organizer Form</a></strong>.</p>		</div>	
+				</div>
+  </div></div></div></div></div>
+                                    </main>
+                                </div>
+                                                            </div>
+                                                    </div>
+                    </div>
+                                            </div>
+                <!-- mainbottom -->
+    <div id="mainbottom"class="stuck_position"><div class="container">
+        <div class="row"><div class="moduletable we_offer  col-sm-12"><div class="module_container"><header class='page_header'><h1 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">how</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">can</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">a</span> <span class="item_title_part_3 item_title_part_even item_title_part_first_half">public</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half">bank</span> <span class="item_title_part_5 item_title_part_even item_title_part_second_half">benefit</span> <span class="item_title_part_6 item_title_part_odd item_title_part_second_half item_title_part_last">you?</span></h1></header><div class="mod-newsflash-adv mod-newsflash-adv__we_offer cols-3" id="module_216">
+    <div class="row">
+    <article class="col-sm-4 item item_num0 item__module  " id="item_206">
+    
+<div class="item_content">
+<i class="fl-puppets-bank17"></i>
+	<!-- Item title -->
+		<h3 class="item_title item_title__we_offer"><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Rebuild</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">and</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">Regenerate</span> <span class="item_title_part_3 item_title_part_even item_title_part_first_half">Communities</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half">through</span> <span class="item_title_part_5 item_title_part_even item_title_part_second_half">Public</span> <span class="item_title_part_6 item_title_part_odd item_title_part_second_half item_title_part_last">Financing</span></h3>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p>- Build affordable housing, ease the homelessness crisis.</p>
+<p>- Finance infrastructure including: water projects, roads, bridges, and schools.</p>
+<p>- Invest in small business development.</p>
+<p>- Drive the renewable energy revolution and build climate change resilience.</p>
+<p>- Deliver student loan debt relief.</p>
+<p>- Serve the needs of the unbanked and underbanked populations.</p>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    <article class="col-sm-4 item item_num1 item__module  " id="item_207">
+    
+<div class="item_content">
+<i class="fl-puppets-board2"></i>
+	<!-- Item title -->
+		<h3 class="item_title item_title__we_offer"><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Save</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">and</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">protect</span> <span class="item_title_part_3 item_title_part_even item_title_part_first_half">our</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half">money</span> <span class="item_title_part_5 item_title_part_even item_title_part_second_half">through</span> <span class="item_title_part_6 item_title_part_odd item_title_part_second_half">fiscal</span> <span class="item_title_part_7 item_title_part_even item_title_part_second_half item_title_part_last">responsibility</span></h3>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p>- Funding projects through a public bank can save 50% on interest and fees that would normally be extracted by Wall Street banks, doubling the power of our tax dollars.</p>
+<p>- Taxpayer dollars will no longer be held in institutions participating in shadow banking and other irresponsible Wall Street gambling.</p>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    <article class="col-sm-4 item item_num2 item__module  lastItem" id="item_208">
+    
+<div class="item_content">
+<i class="fl-puppets-book-bag"></i>
+	<!-- Item title -->
+		<h3 class="item_title item_title__we_offer"><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Provide</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">accountability,</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">transparency,</span> <span class="item_title_part_3 item_title_part_even item_title_part_second_half">and</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half item_title_part_last">ethics</span></h3>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p>- Governed by a transparent Board of Directors and an anti-corruption ethos, and guided by standards and policies focused on accountability and responsibility.</p>
+<p>- Taxpayer dollars held in the public bank will not be invested in fossil fuels, private prisons, immigrant detention centers, the war machine, or other destructive industries.</p>
+<p> </p>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    </div> 
+  <div class="clearfix"></div>
+
+  </div></div></div></div>
+        </div></div>
+            </div>
+        </div>
+        <div id="footer-wrapper">
+            <div class="footer-wrapper-inner">
+                                <!-- Copyright -->
+                <div id="copyright" role="contentinfo">
+                    <div class="container">                        <div class="row">
+                            
+                            <div class="copyright col-sm-6">
+                                                                <span class="siteName">Public Bank LA</span>
+                                                                <div class="moduletable copyright_menu "><div class="module_container"><div class="mod-menu">
+	<ul class="menu ">
+	<li class="item-577 active">
+<a href="/index.php" >Home</a>
+</li>
+<li class="item-578">
+<a href="/index.php?Itemid=582" >About</a>
+</li>
+<li class="item-579">
+<a href="/index.php?Itemid=426" >5-Point Agenda</a>
+</li>
+<li class="item-580">
+<a href="/index.php?Itemid=138" >FAQS</a>
+</li>
+<li class="item-581">
+<a href="/index.php/contact" >Contact</a>
+</li>
+	</ul>
+</div></div></div><div class="moduletable  "><div class="module_container"><header class='page_header'><h3 class="moduleTitle "><span class="item_title_part_0 item_title_part_odd item_title_part_first_half item_title_part_first">Public</span> <span class="item_title_part_1 item_title_part_even item_title_part_first_half">Bank</span> <span class="item_title_part_2 item_title_part_odd item_title_part_first_half">LA</span> <span class="item_title_part_3 item_title_part_even item_title_part_second_half">Mailing</span> <span class="item_title_part_4 item_title_part_odd item_title_part_second_half item_title_part_last">List</span></h3></header>
+
+	
+	
+
+<div class="module" >
+	<script type="text/javascript" src="https://publicbankla.com/modules/mod_mailchimp2/url.js"> </script>
+	<script type="text/javascript" src="https://publicbankla.com/modules/mod_mailchimp2/ajax.js"> </script>
+
+
+	<script type="text/javascript">
+	//<![CDATA[
+
+	// Global Ajax request
+	var MCajaxReq = new MCAjaxRequest();
+
+	// Add a new email address on the server using Ajax
+
+	function addEmailAddress() {
+
+
+	
+		var lang_error_invalid_email = 'Invalid Email Address';
+		var lang_message_adding = 'Adding...';
+
+		
+
+		// Disable the Add button and set the status to busy
+		document.getElementById("mc2_add").disabled = true;
+		document.getElementById("mc2_status").innerHTML = lang_message_adding;
+
+		// Send the new email entry and our module id data as an Ajax request
+		postvars = "ajax=true" + "&mid=235" + "&email=" + document.getElementById("mc2_email").value;
+		var mergeVarInputs = document.getElementById('mcmergevars');
+		mvinputs = mergeVarInputs.getElementsByTagName('input'); //does not get selects.  
+
+		maxj = mvinputs.length;
+		for(j=0; j < maxj; j++){
+			if(mvinputs[j].getAttribute("type") == "radio") { //don't automatically add all radio inputs
+				
+				if (mvinputs[j].checked && mvinputs[j].value) { 
+					postvars = postvars + "&" + mvinputs[j].getAttribute('name') + 
+						"=" + mvinputs[j].value;
+				}
+				
+			} else if(mvinputs[j].value){ //input but not radiobutton
+				postvars = postvars + "&" + mvinputs[j].getAttribute('name') + 
+					"=" + mvinputs[j].value;
+			}
+
+		}
+		
+		
+		mvselects = mergeVarInputs.getElementsByTagName('select');
+		
+		maxj = mvselects.length;
+		for(j=0; j < maxj; j++){
+			if(mvselects[j].value){
+				postvars = postvars + "&" + mvselects[j].getAttribute('name') + 
+					"=" + mvselects[j].value;
+			}
+
+		}
+
+		
+		//SEND
+
+										
+				//Add ajax parameter to send_to_mc call
+				MCajaxReq.send("POST", "https://publicbankla.com/modules/mod_mailchimp2/send_to_mc.php?ajax=1", handleRequest, "application/x-www-form-urlencoded; charset=UTF-8", postvars);	
+				
+			
+		
+
+	}	// end of addEmailAddress
+
+	// Handle the Ajax request
+	function handleRequest() {
+		if (MCajaxReq.getReadyState() == 4 && MCajaxReq.getStatus() == 200) {
+			// Confirm the addition of the email entry
+			document.getElementById("mc2_status").innerHTML = MCajaxReq.getResponseText();
+			document.getElementById("mc2_add").disabled = false;
+			document.getElementById("mc2_email").value = "";
+			
+			var mvinputs = document.getElementById('mcmergevars');	// clear mergevars
+			if(mvinputs.getElementsByTagName('input').length){
+				var inputs = mvinputs.getElementsByTagName('input');
+				if(inputs){
+					for (var i=0; i < inputs.length; i++) {	
+						inputs[i].value = '';		
+					}
+				}
+			}
+			/* clear checkboxes and radios */
+			var iginputs = document.getElementById('mciginputs');
+			ig_values = "";
+			if(iginputs){
+				if(iginputs.getElementsByTagName('input').length){
+					var inputs = iginputs.getElementsByTagName('input'); 	// radio or checkbox
+				} else {
+					var inputs = iginputs.getElementsByTagName('option'); 	// select list
+				}
+				if(inputs){
+					for (var i=0; i < inputs.length; i++) {
+	 					// checked for radio or checkbox, selected for select list
+						if (inputs[i].checked || inputs[i].selected) { 
+							inputs[i].checked = false;
+		      				}
+					}
+				}
+			}
+		}
+	}
+	//]]>
+	</script>
+
+	<div id="mc2_status"></div>
+		
+	
+	<form name="mailchimp2" action="">
+	<span class="modmc2_label">Email address:</span><br />
+	<input type="text" id="mc2_email" name="email" value="" size="25"/><br />
+		<div id="mcmergevars" style="display: inline">
+	<span class="modmc2_label notreq">First Name: </span><br />
+<input class="mergevars" type="text" name="FNAME" size="25"/><br />
+<span class="modmc2_label notreq">Last Name: </span><br />
+<input class="mergevars" type="text" name="LNAME" size="25"/><br />
+
+	</div>
+
+
+		<input type="submit" id="mc2_add" value="Add" onclick="addEmailAddress(); return false;" /></form><br />
+	
+</div>
+
+</div></div>
+                                <div class="copytight-privacy">
+                                <span class="copy">&copy; </span><span class="year">2022</span>                                <a class="privacy_link" rel="license" href="/index.php/privacy-policy">
+                                    Public Bank LA                                </a>
+                                                                </div>
+                            </div>
+                            <!-- copyright-right -->
+    <div id="copyright-right"class="stuck_position"><div class="container">
+        <div class="row"><div class="moduletable   col-sm-6"><div class="module_container">
+<div class="mod-menu mod-menu__social">
+	<ul class="nav menu social">
+	<li class="item-148"><a class="fa fa-facebook hasTooltip" href="https://www.facebook.com/publicbankla/" title="Facebook" ></a>
+</li><li class="item-150"><a class="fa fa-twitter hasTooltip" href="https://twitter.com/publicbankla" title="Twitter" ></a>
+</li><li class="item-149"><a class="fa fa-instagram" href="https://www.instagram.com/publicbankla" title="Instagram" ></a>
+</li>	</ul>
+</div></div></div></div>
+        </div></div>
+                                                       
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="back-top">
+        <a href="#"><span></span></a>
+    </div>        
+                
+    </body>
+</html>
